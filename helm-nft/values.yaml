@@ -1,0 +1,23 @@
+# Values for the deployment
+replicaCount: 1
+
+image:
+  repository: prakharm1234/test
+  tag: v1
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+env:
+  NODE_ENV: "production"

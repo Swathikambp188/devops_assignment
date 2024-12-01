@@ -1,0 +1,15 @@
+apiVersion: v2
+name: nft-bridge
+description: A Helm chart for deploying the nft-bridge application to EKS
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+maintainers:
+  - name: Your Name
+    email: your-email@example.com
+keywords:
+  - nft-bridge
+  - kubernetes
+  - eks
+  - helm
+dependencies: []
