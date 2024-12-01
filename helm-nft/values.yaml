@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: prakharm1234/test
+  repository: <>/test
   tag: v1
   pullPolicy: IfNotPresent
 
