@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "prakharm1234/test" // Docker Hub repository name
+        DOCKER_IMAGE = "swathikambam/test" // Docker Hub repository name
         TAG = "${BUILD_NUMBER}" // Image tag
         AWS_REGION = 'us-east-1' // Your AWS region
         EKS_CLUSTER_NAME = 'my-cluster1' // Your EKS cluster name
