@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: swathikambam/review2
+  repository: swathikambam/hello
   tag: v1
   pullPolicy: IfNotPresent
 
