@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = "swathikambam/test" // Docker Hub repository name
         TAG = "${BUILD_NUMBER}" // Image tag
         AWS_REGION = 'us-east-1' // Your AWS region
-        EKS_CLUSTER_NAME = 'my-cluster1' // Your EKS cluster name
+        EKS_CLUSTER_NAME = 'ascode-cluster' // Your EKS cluster name
         HELM_CHART_PATH = 'helm-nft' // Path to the Helm chart in the repo (helm-nft directory)
     }
 
