@@ -1,0 +1,43 @@
+name: EKS Cluster Infra Creation
+
+on:
+   push:
+    branches:
+      - pip-assignment
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.0
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-south-1
+
+    - name: Initialize Terraform
+      working-directory: ./apps/nft-bridge/terraform
+      run: terraform init -reconfigure
+
+    - name: Validate Terraform
+      working-directory: ./apps/nft-bridge/terraform
+      run: terraform validate
+
+    - name: Plan Terraform
+      working-directory: ./apps/nft-bridge/terraform
+      run: terraform plan
+
+    # - name: Apply Terraform
+    #   if: failure()
+    #   working-directory: ./apps/nft-bridge/terraform
+    #   run: terraform apply -auto-approve
